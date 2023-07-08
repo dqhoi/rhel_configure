@@ -3,7 +3,7 @@
 source variables.sh
 
 cursors() {
-	cd $REPO_DIR/../downloads/
+	cd $HOME/Drive/
 	git clone https://github.com/vinceliuice/WhiteSur-cursors.git
 	cd WhiteSur-cursors
 	sudo ./install.sh

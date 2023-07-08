@@ -3,7 +3,7 @@
 source variables.sh
 
 clean_data() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	gcm_file=$(ls gcm*)
 	shfmt_file=$(ls shfmt*)
 	rm -rf gnome-terminal install.sh $HOME/.oh-my-zsh/themes WhiteSur-gtk-theme WhiteSur-icon-theme WhiteSur-cursors ibus-bamboo fira-code fira-code.zip install-gnome-extensions.sh $gcm_file shfmt

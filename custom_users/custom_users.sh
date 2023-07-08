@@ -2,7 +2,7 @@
 source variables.sh
 
 download_file() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 	rm -f ./install-gnome-extensions.sh
 	wget -N -q "https://raw.githubusercontent.com/ToasterUwU/install-gnome-extensions/master/install-gnome-extensions.sh" -O ./install-gnome-extensions.sh && chmod +x install-gnome-extensions.sh
@@ -10,7 +10,7 @@ download_file() {
 }
 
 ohmyzsh() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	declare -a gitarray
 	gitarray=('zsh-users/zsh-syntax-highlighting.git '$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting'' 'zsh-users/zsh-autosuggestions '$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions'' 'spaceship-prompt/spaceship-prompt.git '$HOME/.oh-my-zsh/custom/themes/spaceship-prompt'' 'TamCore/autoupdate-oh-my-zsh-plugins '$HOME/.oh-my-zsh/custom/plugins/autoupdate'')
 	sh install.sh --unattended
@@ -33,7 +33,7 @@ terminal() {
 		gsettings set $profile_path $setting
 	done
 	gsettings set org.gnome.desktop.interface enable-hot-corners false
-	cd $REPO_DIR/../downloads/gnome-terminal
+	cd $HOME/Drive/gnome-terminal
 	./install.sh -s Dracula -p $(whoami) --skip-dircolors
 	cd $REPO_DIR/../create_users
 	if [ -f $HOME/.zshrc ]; then
@@ -67,7 +67,7 @@ accessibility() {
 }
 
 gnome_extensions() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	declare -a extensions
 	extensions=('1460' '4679' '2087' '3733' '5010' '1082')
 	for i in "${extensions[@]}"; do
@@ -87,14 +87,14 @@ keybinding() {
 	# Launch Terminal
 	gsettings set $KEY1_PATH:$KEY_PATH/custom1/ name "GNOME Terminal"
 	gsettings set $KEY1_PATH:$KEY_PATH/custom1/ command "gnome-terminal"
-	gsettings set $KEY1_PATH:$KEY_PATH/custom1/ binding "<Primary><Alt>Y"
+	gsettings set $KEY1_PATH:$KEY_PATH/custom1/ binding "<Primary><Alt>T"
 	# Switch Input Method
 	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Control>space', 'XF86Keyboard']"
 }
 
 remove_file() {
-	cd $REPO_DIR/../downloads
-	rm -rf gnome-terminal install.sh $HOME/.oh-my-zsh/themes WhiteSur-gtk-theme WhiteSur-icon-theme WhiteSur-cursors ibus-bamboo fira-code fira-code.zip install-gnome-extensions.sh
+	cd $HOME/Drive
+	rm -rf gnome-terminal install.sh $HOME/.oh-my-zsh/themes install-gnome-extensions.sh
 }
 
 custom_users() {

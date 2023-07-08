@@ -3,7 +3,7 @@
 source variables.sh
 
 icons() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
 	cd WhiteSur-icon-theme
 	sudo ./install.sh -n 'rhel' -t default -a -b

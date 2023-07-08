@@ -4,7 +4,7 @@ source variables.sh
 
 themes() {
 	sudo rm -rf /usr/share/themes/redhat-alt
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 	# sudo dnf install vi -y
 	cd WhiteSur-gtk-theme

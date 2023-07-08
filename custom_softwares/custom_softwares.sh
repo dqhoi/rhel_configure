@@ -4,7 +4,7 @@
 source variables.sh
 
 gcm() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	gcm_install() {
 		curl -s https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest | grep "browser_download_url" | grep -v "symbol" | grep "linux" | grep "tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -i -
 		gcm_file=$(ls gcm*.tar.gz)	
@@ -22,8 +22,8 @@ gcm() {
 }
 
 shfmt() {
-	mkdir -p $REPO_DIR/../downloads/shfmt
-	cd $REPO_DIR/../downloads/shfmt
+	mkdir -p $HOME/Drive/shfmt
+	cd $HOME/Drive/shfmt
 	curl -s https://api.github.com/repos/mvdan/sh/releases/latest | grep "browser_download_url" | grep "linux_amd64" | cut -d : -f 2,3 | tr -d \" | wget -i -
 	mv * shfmt
 	sudo mv shfmt /usr/bin/

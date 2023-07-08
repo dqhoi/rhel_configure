@@ -3,7 +3,7 @@
 source variables.sh
 
 fonts() {
-	cd $REPO_DIR/../downloads
+	cd $HOME/Drive
 	wget $(curl -s https://api.github.com/repos/tonsky/FiraCode/releases/latest | grep browser_download_url | cut -d '"' -f 4) -O fira-code.zip
 	unzip fira-code.zip -d fira-code
 	sudo mkdir -p /usr/share/fonts/fira-code-fonts
