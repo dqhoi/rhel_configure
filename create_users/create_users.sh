@@ -57,7 +57,7 @@ create_users() {
 	fi
 }
 
-create_users 2>&1 | tee -a $REPO_DIR/../log/create_users.log
+create_users 2>&1 | tee -a $HOME/Drive/logs/create_users.log
 if [[ ${PIPESTATUS[0]} -eq 1 ]]; then
 	exit 1
 fi

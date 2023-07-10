@@ -21,4 +21,4 @@ bootloader() {
 	sudo grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 }
 
-bootloader &>$REPO_DIR/../log/bootloader.log
+bootloader &>$HOME/Drive/logs/bootloader.log

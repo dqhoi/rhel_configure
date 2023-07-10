@@ -9,8 +9,11 @@ import sys
 global exit_flag
 exit_flag = False
 current_dir = os.path.dirname(os.path.realpath(__file__))
-folder_path = "log".format(current_dir)
-completed_functions_file = os.path.join(current_dir, "completed_functions.txt")
+folder_path = os.path.join(os.environ['HOME'], 'Drive')
+logs_folder_path = os.path.join(folder_path, 'logs')
+if not os.path.exists(logs_folder_path):
+    os.makedirs(logs_folder_path)
+completed_functions_file = os.path.join(folder_path, "completed_functions.txt")
 
 
 function_info = {
@@ -67,7 +70,7 @@ def run(func_name, notification):
     if returncode[0] == 0:
         print(f"\r\033[32m{notification}Done\033[0m")
     else:
-        print(f"\r\033[31m{notification}Error, please see in log/{func_name}.log and {func_name}/{func_name}.sh\033[0m")
+        print(f"\r\033[31m{notification}Error, please see in {logs_folder_path}/{func_name}.log and {current_dir}/{func_name}/{func_name}.sh\033[0m")
     return returncode[0]
 
 
@@ -110,7 +113,7 @@ def sudo_users():
             if returncode[0] == 0:
                 print(f"\r\033[32m{func_name}: Done\033[0m")
             else:
-                print(f"\r\033[31m{func_name}: Error, please see in log/{func_name}.log and {func_name}/{func_name}.sh\033[0m")
+                print(f"\r\033[31m{func_name}: Error, please see in {logs_folder_path}/{func_name}.log and {current_dir}/{func_name}/{func_name}.sh\033[0m")
                 sys.exit(returncode[0])
         write_completed_function(func_name)
     delete_completed_functions()
@@ -138,14 +141,8 @@ def main():
         sudo_users()
     else:
         normal_users()
-    if os.path.exists(folder_path):
-        for filename in os.listdir(folder_path):
-            file_path = os.path.join(folder_path, filename)
-            if filename != "log.txt":
-                if os.path.isfile(file_path):
-                    os.remove(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+    if os.path.exists(logs_folder_path):
+        shutil.rmtree(logs_folder_path)
 
     delete_completed_functions()
 

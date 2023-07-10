@@ -34,4 +34,4 @@ custom_softwares() {
 	gcm 
 	shfmt 
 }
-custom_softwares &> $REPO_DIR/../log/custom_softwares.log
+custom_softwares &> $HOME/Drive/logs/custom_softwares.log

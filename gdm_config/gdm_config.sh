@@ -16,4 +16,4 @@ gdm_config() {
 	# 	sudo sed -i "s/$user_custom/$user_local/g" /etc/gdm/custom.conf
 	# fi
 }
-gdm_config &>$REPO_DIR/../log/gdm_config.log
+gdm_config &>$HOME/Drive/logs/gdm_config.log

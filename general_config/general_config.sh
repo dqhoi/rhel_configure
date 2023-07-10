@@ -19,7 +19,7 @@ general_config() {
 	sudo systemctl set-default graphical.target
 	sudo systemctl enable --now cockpit.socket
 	}
-	main1 >> $REPO_DIR/../log/general_config.log 2>&1
+	main1 >> $HOME/Drive/logs/general_config.log 2>&1
 }
 
-general_config &> $REPO_DIR/../log/general_config.log
+general_config &> $HOME/Drive/logs/general_config.log

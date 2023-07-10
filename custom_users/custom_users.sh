@@ -106,4 +106,4 @@ custom_users() {
 	keybinding
 	remove_file
 }
-custom_users &> $REPO_DIR/../log/custom_users.log
+custom_users &> $HOME/Drive/logs/custom_users.log

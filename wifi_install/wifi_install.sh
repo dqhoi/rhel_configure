@@ -28,4 +28,4 @@ wifi_install() {
 }
 
 
-wifi_install &> $REPO_DIR/../log/wifi_install.log
+wifi_install &> $HOME/Drive/logs/wifi_install.log

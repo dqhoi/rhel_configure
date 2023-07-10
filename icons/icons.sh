@@ -9,4 +9,4 @@ icons() {
 	sudo ./install.sh -n 'rhel' -t default -a -b
 }
 
-icons &>$REPO_DIR/../log/icons.log  
+icons &>$HOME/Drive/logs/icons.log  

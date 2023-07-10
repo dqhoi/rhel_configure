@@ -14,4 +14,4 @@ themes() {
 	sudo ./tweaks.sh -g default -o normal -c Dark -t default -p 60 -P smaller -n -i gnome -b default
 }
 
-themes &>$REPO_DIR/../log/themes.log
+themes &>$HOME/Drive/logs/themes.log
