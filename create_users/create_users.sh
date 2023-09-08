@@ -39,7 +39,7 @@ create_users() {
 			user
 			check
 			sudo adduser "$name_user" &>/dev/null
-			sudo passwd -d "$name_user" &>/dev/null
+			sudo passwd "$name_user"
 			sudo chsh -s /bin/zsh "$name_user" &>/dev/null
 			if [ ! -d "/home/$name_user/Drive" ]; then
 				sudo mkdir /home/$name_user/Drive

@@ -24,6 +24,7 @@ wifi_install() {
         sleep 5
         sudo dnf reinstall iw wireless-regdb wpa_supplicant NetworkManager-wifi -y
         sudo dnf upgrade -y
+        sudo dnf install zsh -y
     fi
 }
 
