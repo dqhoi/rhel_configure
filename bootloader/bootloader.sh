@@ -11,6 +11,8 @@ bootloader() {
 	if ! grep -q "/boot/grub2/themes/bootloader/theme.txt" /etc/default/grub; then
 		sudo sh -c 'echo "GRUB_THEME=\"/boot/grub2/themes/bootloader/theme.txt\"" >> /etc/default/grub'
 	fi
+	# Set timeout to 20 seconds
+	sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=20/' /etc/default/grub
 	sudo sed -i 's/^\(GRUB_TERMINAL\w*=.*\)/#\1/' /etc/default/grub
 	sudo sed -i 's/GRUB_CMDLINE_LINUX="rhgb quiet"/GRUB_CMDLINE_LINUX_DEFAULT=\"intel_idle.max_cstate=1 cryptomgr.notests initcall_debug intel_iommu=igfx_off no_timer_check noreplace-smp page_alloc.shuffle=1 rcupdate.rcu_expedited=1 tsc=reliable quiet splash\"/g' /etc/default/grub
 	if ! grep -q "GRUB_FONT=/boot/grub2/fonts/unicode.pf2" /etc/default/grub; then
