@@ -8,7 +8,7 @@ general_config() {
 		sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
 		# Extra Packages for Enterprise Linux 9.2 (EPEL)
 		sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
-		sudo dnf install gnome-shell gnome-terminal gnome-terminal-nautilus nautilus gnome-disk-utility chrome-gnome-shell PackageKit-command-not-found gnome-software gnome-system-monitor podman-compose cockpit-podman cockpit-machines podman gdm git dbus-x11 gcc gdb java-latest-openjdk-devel.x86_64 -y
+		sudo dnf install gnome-shell gnome-terminal gnome-terminal-nautilus nautilus gnome-disk-utility chrome-gnome-shell PackageKit-command-not-found gnome-software gnome-system-monitor podman-compose cockpit-podman cockpit-machines podman gdm git dbus-x11 gcc gdb gparted -y
 		sudo chsh -s /bin/zsh $USER
 		if [ ! -d "$HOME/Drive" ]; then
 			mkdir $HOME/Drive
