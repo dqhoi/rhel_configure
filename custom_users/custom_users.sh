@@ -63,7 +63,7 @@ accessibility() {
 	gsettings set org.gnome.desktop.input-sources show-all-sources true
 	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo::Us')]"
 	gsettings set org.gnome.desktop.interface locate-pointer true
-	gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:appmenu"
+	gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:close,minimize,maximize"
 }
 
 gnome_extensions() {
@@ -89,7 +89,7 @@ keybinding() {
 	gsettings set $KEY1_PATH:$KEY_PATH/custom1/ command "gnome-terminal"
 	gsettings set $KEY1_PATH:$KEY_PATH/custom1/ binding "<Primary><Alt>T"
 	# Switch Input Method
-	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Control>space', 'XF86Keyboard']"
+	gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Alt>Z', 'XF86Keyboard']"
 }
 
 remove_file() {
@@ -102,8 +102,8 @@ custom_users() {
 	ohmyzsh
 	terminal
 	accessibility
-	gnome_extensions
 	keybinding
+	gnome_extensions
 	remove_file
 }
 custom_users &> $HOME/Drive/logs/custom_users.log
