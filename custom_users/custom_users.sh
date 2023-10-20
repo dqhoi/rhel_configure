@@ -69,14 +69,14 @@ accessibility() {
 gnome_extensions() {
 	cd $HOME/Drive
 	declare -a extensions
-	extensions=('1460' '4679' '2087' '3733' '5010' '1082')
+	extensions=('1460' '4679' '2087' '3733' '5010' '1082' '704' '6' '8' '973')
 	for i in "${extensions[@]}"; do
 		echo $(./install-gnome-extensions.sh -e -o -u $i)
 	done
 }
 
 keybinding() {
-    KEY1_PATH="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
+	KEY1_PATH="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 	KEY_PATH="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
 	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
 		"['$KEY_PATH/custom0/', '$KEY_PATH/custom1/']"
@@ -106,4 +106,4 @@ custom_users() {
 	gnome_extensions
 	remove_file
 }
-custom_users &> $HOME/Drive/logs/custom_users.log
+custom_users &>$HOME/Drive/logs/custom_users.log
