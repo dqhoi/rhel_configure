@@ -9,8 +9,8 @@ import sys
 global exit_flag
 exit_flag = False
 current_dir = os.path.dirname(os.path.realpath(__file__))
-folder_path = os.path.join(os.environ['HOME'], 'Drive')
-logs_folder_path = os.path.join(folder_path, 'logs')
+folder_path = os.path.join(os.environ["HOME"], "Drive")
+logs_folder_path = os.path.join(folder_path, "logs")
 if not os.path.exists(logs_folder_path):
     os.makedirs(logs_folder_path)
 completed_functions_file = os.path.join(folder_path, "completed_functions.txt")
@@ -70,7 +70,9 @@ def run(func_name, notification):
     if returncode[0] == 0:
         print(f"\r\033[32m{notification}Done\033[0m")
     else:
-        print(f"\r\033[31m{notification}Error, please see in {logs_folder_path}/{func_name}.log and {current_dir}/{func_name}/{func_name}.sh\033[0m")
+        print(
+            f"\r\033[31m{notification}Error, please see in {logs_folder_path}/{func_name}.log and {current_dir}/{func_name}/{func_name}.sh\033[0m"
+        )
     return returncode[0]
 
 
@@ -113,7 +115,9 @@ def sudo_users():
             if returncode[0] == 0:
                 print(f"\r\033[32m{func_name}: Done\033[0m")
             else:
-                print(f"\r\033[31m{func_name}: Error, please see in {logs_folder_path}/{func_name}.log and {current_dir}/{func_name}/{func_name}.sh\033[0m")
+                print(
+                    f"\r\033[31m{func_name}: Error, please see in {logs_folder_path}/{func_name}.log and {current_dir}/{func_name}/{func_name}.sh\033[0m"
+                )
                 sys.exit(returncode[0])
         write_completed_function(func_name)
     delete_completed_functions()
