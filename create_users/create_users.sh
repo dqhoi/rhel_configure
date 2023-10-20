@@ -45,8 +45,8 @@ create_users() {
 				sudo mkdir /home/$name_user/Drive
 			fi
 			sudo chmod -R 777 /home/$name_user
-			cd $REPO_DIR/../..
-			cp -R rhel_configure /home/$name_user/Drive
+			cd /home/$name_user/Drive
+			git clone https://github.com/dqhoi/rhel_configure.git
 			sudo chmod -R 777 /home/$name_user
 		done
 	elif [[ "$option" == "n" ]]; then
