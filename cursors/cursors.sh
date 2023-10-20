@@ -8,4 +8,4 @@ cursors() {
 	cd WhiteSur-cursors
 	sudo ./install.sh
 }
-cursors &> $HOME/Drive/logs/cursors.log
+cursors &>$HOME/Drive/logs/cursors.log

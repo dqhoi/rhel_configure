@@ -7,7 +7,7 @@ gcm() {
 	cd $HOME/Drive
 	gcm_install() {
 		curl -s https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest | grep "browser_download_url" | grep -v "symbol" | grep "linux" | grep "tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -i -
-		gcm_file=$(ls gcm*.tar.gz)	
+		gcm_file=$(ls gcm*.tar.gz)
 		sudo tar -xvf $gcm_file -C /usr/local/bin
 		git-credential-manager configure
 	}
@@ -31,7 +31,8 @@ shfmt() {
 }
 
 custom_softwares() {
-	gcm 
-	shfmt 
+	gcm
+	shfmt
 }
-custom_softwares &> $HOME/Drive/logs/custom_softwares.log
+
+custom_softwares &>$HOME/Drive/logs/custom_softwares.log

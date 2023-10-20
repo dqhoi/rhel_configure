@@ -17,4 +17,4 @@ clean_data() {
 	cd $HOME
 }
 
-clean_data &> $HOME/Drive/logs/clean_data.log
+clean_data &>$HOME/Drive/logs/clean_data.log

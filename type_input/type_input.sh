@@ -10,4 +10,4 @@ type_input() {
 	sudo make install
 }
 
-type_input &> $HOME/Drive/logs/type_input.log
+type_input &>$HOME/Drive/logs/type_input.log
