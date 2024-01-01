@@ -33,10 +33,11 @@ wifi_install() {
 			break
 		fi
 		sudo systemctl restart NetworkManager
+		sleep 30
 		sudo dnf reinstall iw wireless-regdb wpa_supplicant NetworkManager-wifi -y
 	fi
 	sudo dnf upgrade -y
-	sudo dnf install zsh -y
+	sudo dnf install zsh git -y
 
 }
 
